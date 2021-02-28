@@ -1,0 +1,17 @@
+.social-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.social-buttons .sb-container {
+  margin: 0px 12px;
+  color: var(--theme-menu-color);
+  font-size: var(--font-size-bm-socialbutton);
+  cursor: pointer;
+  transition: all var(--time-transition-socialmedia) ease-in-out;
+}
+.social-buttons .sb-container:hover {
+  color: var(--theme-color);
+  transition: all var(--time-transition-socialmedia) ease-in-out;
+}

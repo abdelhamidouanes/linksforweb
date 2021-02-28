@@ -1,0 +1,17 @@
+.copy-right {
+  height: var(--height-bm-header-footer);
+  min-height: var(--height-bm-header-footer);
+  width: var(--width-bm-header-footer);
+  min-width: var(--width-bm-header-footer);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: var(--font-size-bm-cr);
+  font-family: var(--font-family-bm);
+  border-top: 1px solid var(--theme-border-color2);
+  color: var(--theme-menu-color);
+  margin-left: var(--margin-left-bm);
+}
+.copy-right:hover {
+  color: var(--theme-menu-hover-color);
+}

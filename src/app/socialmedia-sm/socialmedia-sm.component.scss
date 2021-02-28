@@ -1,0 +1,49 @@
+.social-media {
+  margin-bottom: var(--margin-sm2-top-bottom);
+  width: var(--width-sm1);
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.sbcontainer {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 0px solid var(--theme-border-color);
+  transition: all var(--time-transition) ease-in-out;
+}
+.sbcontainer:hover {
+  background-color: var(--theme-bg2-color);
+  border: 1px solid var(--theme-border-color);
+}
+.sbcontainer:hover .fb {
+  color: #3b5998;
+  transform: rotate3d(1, 50, 1, 360deg);
+  font-size: 1rem;
+}
+.sbcontainer:hover .insta {
+  color: #8a3ab9;
+  transform: rotate3d(50, 1, 1, 360deg);
+  font-size: 1rem;
+}
+.sbcontainer:hover .in {
+  color: #0077b5;
+  transform: rotate3d(1, 1, 50, 360deg);
+  font-size: 1rem;
+}
+.sbcontainer:hover .twit {
+  color: #6cadde;
+  transform: rotate3d(50, 50, 50, 360deg);
+  font-size: 1rem;
+}
+.sbcontainer .anim {
+  color: var(--theme-color);
+  transition: all var(--time-transition-socialmedia) ease-in-out;
+  font-size: var(--font-size-sm2);
+}

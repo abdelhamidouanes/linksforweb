@@ -1,0 +1,115 @@
+.logo-container {
+  font-family: var(--font-family-logo);
+  width: 250px;
+  min-width: 250px;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  transform: rotate(-90deg);
+}
+.img-container,
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-container {
+  grid-column: 1/2;
+}
+.text-container {
+  grid-column: 2/3;
+}
+.shapes-container {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  position: relative;
+  background-color: var(--theme-bg-color);
+  transition: all var(--time-transition) ease-in-out;
+}
+
+.h1p-container {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  position: relative;
+  background-color: var(--theme-bg-color);
+  transition: all var(--time-transition) ease-in-out;
+}
+.out-cercle {
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  background-color: var(--color-out-cercle-bg);
+  border: 1.5px solid var(--color-out-cercle-border);
+}
+.out-cercle:nth-child(1) {
+  top: var(--x);
+  right: var(--y);
+  transform: translateX(var(--y));
+}
+.out-cercle:nth-child(4) {
+  bottom: var(--x);
+  right: var(--y);
+  transform: translateX(var(--y));
+}
+.out-cercle:nth-child(2) {
+  right: var(--v);
+  top: var(--z);
+}
+.out-cercle:nth-child(3) {
+  right: var(--v);
+  bottom: var(--z);
+}
+.out-cercle:nth-child(5) {
+  left: var(--v);
+  top: var(--z);
+}
+.out-cercle:nth-child(6) {
+  left: var(--v);
+  bottom: var(--z);
+}
+.in-cercle {
+  position: absolute;
+  width: 6%;
+  height: 6%;
+  border-radius: 50%;
+  background-color: var(--theme-color);
+  transition: all var(--time-transition) ease-in-out;
+}
+.in-cercle:nth-child(7) {
+  bottom: var(--y);
+  left: var(--w);
+  transform: translateY(var(--y));
+}
+.in-cercle:nth-child(10) {
+  bottom: var(--y);
+  right: var(--w);
+  transform: translateY(var(--y));
+}
+.in-cercle:nth-child(8) {
+  top: var(--t);
+  left: var(--u);
+}
+.in-cercle:nth-child(9) {
+  top: var(--t);
+  right: var(--u);
+}
+.in-cercle:nth-child(11) {
+  bottom: var(--t);
+  right: var(--u);
+}
+.in-cercle:nth-child(12) {
+  bottom: var(--t);
+  left: var(--u);
+}
+.h1p-container {
+  display: flex;
+  color: var(--theme-color);
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 100;
+  transition: all var(--time-transition) ease-in-out;
+}

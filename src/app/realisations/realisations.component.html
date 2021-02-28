@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="realisation" *ngFor="let realisation of realisations; let i=index" [ngStyle]="{'width': realisation.hover ? '70%' : '25%'}">
+        <div class="one-realisation-container" (mouseover)="onMouseOver(realisation)" 
+        (mouseout)="onMouseOut(realisation)" 
+        [ngStyle]="{'background-image': 'url(' + imgFolderRealisation+realisation.photoPrincipale + ')', 'filter': realisation.hover ? 'brightness(0.38)': 'brightness(1)', 'border-right-width': realisationsLength==(i+1) ? '0px': '1px'}"
+        >
+        </div>
+        <div class="cercle" (mouseover)="onMouseOver(realisation)" (mouseout)="onMouseOut(realisation)"></div>
+        <div class="plush" (mouseover)="onMouseOver(realisation)" (mouseout)="onMouseOut(realisation)"></div>
+        <div class="plusv" (mouseover)="onMouseOver(realisation)" (mouseout)="onMouseOut(realisation)"></div>
+        <div class="text-container" [ngStyle]="{'display': realisation.hover ? 'flex': 'none'}" 
+        (mouseover)="onMouseOver(realisation)" (mouseout)="onMouseOut(realisation)">
+            <h2>Nos Réalisations</h2>
+            <p>{{realisation.titre}}</p>
+        </div>
+    </div>
+</div>

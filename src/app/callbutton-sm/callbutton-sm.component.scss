@@ -1,0 +1,89 @@
+.phone {
+  width: var(--width-sm2);
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--margin-sm2-top-bottom);
+  cursor: pointer;
+  position: relative;
+}
+.phone i {
+  font-size: var(--font-size-sm2);
+  color: var(--theme-color);
+  transition: all var(--time-transition) ease-in-out;
+}
+.phone:hover .fa-phone-alt {
+  animation: phone 2s ease infinite;
+}
+.phone:hover .phonenumber {
+  visibility: visible;
+  opacity: 100%;
+  left: 115%;
+  z-index: 50;
+}
+@keyframes phone {
+  0% {
+    transform: rotate(-15deg);
+  }
+
+  2% {
+    transform: rotate(15deg);
+  }
+
+  4% {
+    transform: rotate(-18deg);
+  }
+
+  6% {
+    transform: rotate(18deg);
+  }
+
+  8% {
+    transform: rotate(-22deg);
+  }
+
+  10% {
+    transform: rotate(22deg);
+  }
+
+  12% {
+    transform: rotate(-18deg);
+  }
+
+  14% {
+    transform: rotate(18deg);
+  }
+
+  16% {
+    transform: rotate(-12deg);
+  }
+
+  18% {
+    transform: rotate(12deg);
+  }
+
+  20% {
+    transform: rotate(0deg);
+  }
+}
+.phonenumber {
+  position: absolute;
+  top: 0px;
+  left: 600%;
+  width: 150px;
+  height: 30px;
+  border: 1px solid var(--theme-border-color);
+  border-radius: 25px;
+  background-color: var(--theme-bg2-color);
+  font-size: var(--font-size-sm2);
+  color: var(--theme-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0%;
+  transition: all 0.5s ease-in-out;
+  z-index: 50;
+  transition: all var(--time-transition) ease-in-out;
+}

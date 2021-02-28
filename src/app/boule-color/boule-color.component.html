@@ -1,0 +1,8 @@
+<div class="container" [ngStyle]="{'display': fermerBouleColor===true ? 'none' : 'flex'}">
+    <div class="boule">
+        <p>{{getColorTimerString()}}</p>
+        <div class="x-container" (click)="onClickX()">
+            <img class="x" [src]="imgFolder + 'xbutton.png'" alt="croix de fermeture">
+        </div>
+    </div>
+</div>
