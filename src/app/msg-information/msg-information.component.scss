@@ -1,17 +1,190 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  width: 400px;
+  height: 100px;
 }
-.info {
+.background-container {
+  width: 400px;
+  height: 100px;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  width: 300px;
-  height: 40px;
-  border-radius: 20px;
-  border: 1px solid var(--theme-color);
-  color: var(--theme-color-gradient4);
-  background-color: var(--theme-color-gradient3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.info-graduation {
+  border-radius: 80%;
+  background-color: var(--theme-color);
+  width: 400px;
+  height: 2px;
+  opacity: 1;
   transition: all var(--time-transition) ease-in-out;
+}
+p {
+  z-index: 500;
+  text-align: center;
+  color: var(--theme-border-color);
+  font-weight: normal;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  transition: all var(--time-transition) ease-in-out;
+}
+.info-graduation:nth-child(1) {
+  opacity: 1;
+}
+.info-graduation:nth-child(2) {
+  opacity: 0.98;
+}
+.info-graduation:nth-child(3) {
+  opacity: 0.96;
+}
+.info-graduation:nth-child(4) {
+  opacity: 0.94;
+}
+.info-graduation:nth-child(5) {
+  opacity: 0.9199999999999999;
+}
+.info-graduation:nth-child(6) {
+  opacity: 0.8999999999999999;
+}
+.info-graduation:nth-child(7) {
+  opacity: 0.8799999999999999;
+}
+.info-graduation:nth-child(8) {
+  opacity: 0.8599999999999999;
+}
+.info-graduation:nth-child(9) {
+  opacity: 0.8399999999999999;
+}
+.info-graduation:nth-child(10) {
+  opacity: 0.8199999999999998;
+}
+.info-graduation:nth-child(11) {
+  opacity: 0.7999999999999998;
+}
+.info-graduation:nth-child(12) {
+  opacity: 0.7799999999999998;
+}
+.info-graduation:nth-child(13) {
+  opacity: 0.7599999999999998;
+}
+.info-graduation:nth-child(14) {
+  opacity: 0.7399999999999998;
+}
+.info-graduation:nth-child(15) {
+  opacity: 0.7199999999999998;
+}
+.info-graduation:nth-child(16) {
+  opacity: 0.6999999999999997;
+}
+.info-graduation:nth-child(17) {
+  opacity: 0.6799999999999997;
+}
+.info-graduation:nth-child(18) {
+  opacity: 0.6599999999999997;
+}
+.info-graduation:nth-child(19) {
+  opacity: 0.6399999999999997;
+}
+.info-graduation:nth-child(20) {
+  opacity: 0.6199999999999997;
+}
+.info-graduation:nth-child(21) {
+  opacity: 0.5999999999999996;
+}
+.info-graduation:nth-child(22) {
+  opacity: 0.5799999999999996;
+}
+.info-graduation:nth-child(23) {
+  opacity: 0.5599999999999996;
+}
+.info-graduation:nth-child(24) {
+  opacity: 0.5399999999999996;
+}
+.info-graduation:nth-child(25) {
+  opacity: 0.5199999999999996;
+}
+.info-graduation:nth-child(26) {
+  opacity: 0.49999999999999956;
+}
+.info-graduation:nth-child(27) {
+  opacity: 0.47999999999999954;
+}
+.info-graduation:nth-child(28) {
+  opacity: 0.4599999999999995;
+}
+.info-graduation:nth-child(29) {
+  opacity: 0.4399999999999995;
+}
+.info-graduation:nth-child(30) {
+  opacity: 0.4199999999999995;
+}
+.info-graduation:nth-child(31) {
+  opacity: 0.39999999999999947;
+}
+.info-graduation:nth-child(32) {
+  opacity: 0.37999999999999945;
+}
+.info-graduation:nth-child(33) {
+  opacity: 0.35999999999999943;
+}
+.info-graduation:nth-child(34) {
+  opacity: 0.3399999999999994;
+}
+.info-graduation:nth-child(35) {
+  opacity: 0.3199999999999994;
+}
+.info-graduation:nth-child(36) {
+  opacity: 0.2999999999999994;
+}
+.info-graduation:nth-child(37) {
+  opacity: 0.27999999999999936;
+}
+.info-graduation:nth-child(38) {
+  opacity: 0.25999999999999934;
+}
+.info-graduation:nth-child(39) {
+  opacity: 0.23999999999999935;
+}
+.info-graduation:nth-child(40) {
+  opacity: 0.21999999999999936;
+}
+.info-graduation:nth-child(41) {
+  opacity: 0.19999999999999937;
+}
+.info-graduation:nth-child(42) {
+  opacity: 0.17999999999999938;
+}
+.info-graduation:nth-child(43) {
+  opacity: 0.1599999999999994;
+}
+.info-graduation:nth-child(44) {
+  opacity: 0.1399999999999994;
+}
+.info-graduation:nth-child(45) {
+  opacity: 0.1199999999999994;
+}
+.info-graduation:nth-child(46) {
+  opacity: 0.0999999999999994;
+}
+.info-graduation:nth-child(47) {
+  opacity: 0.07999999999999939;
+}
+.info-graduation:nth-child(48) {
+  opacity: 0.05999999999999939;
+}
+.info-graduation:nth-child(49) {
+  opacity: 0.03999999999999938;
+}
+.info-graduation:nth-child(50) {
+  opacity: 0.019999999999999383;
 }

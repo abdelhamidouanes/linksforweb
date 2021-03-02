@@ -33,6 +33,7 @@ import { CopyrightBmComponent } from './copyright-bm/copyright-bm.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BouleColorComponent } from './boule-color/boule-color.component';
 import { MsgInformationComponent } from './msg-information/msg-information.component';
+import { GenerategraduationComponent } from './generategraduation/generategraduation.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { MsgInformationComponent } from './msg-information/msg-information.compo
     HomeComponent,
     CopyrightBmComponent,
     BouleColorComponent,
-    MsgInformationComponent
+    MsgInformationComponent,
+    GenerategraduationComponent
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@
   --time-transition-realisation: 0.5s;
   --position-x-boulecolor: 30px;
   --position-y-boulecolor: 30px;
-  --position-y-msg-information: 30px;
+  --position-y-msg-information: 0px;
   --position-x-msg-information: 50%;
 }
 .container-var1 {
@@ -26,6 +26,9 @@
   --color-out-cercle-bg: #212529;
   --theme-bg-color: #212529;
   --theme-color: #fa4682;
+  --theme-color-hsl1: 340;
+  --theme-color-hsl2: 95%;
+  --theme-color-hsl3: 63%;
   --theme-color-gradient1: #f880bc;
   --theme-color-gradient2: #f0b0e4;
   --theme-color-gradient3: #eedafa;
@@ -44,6 +47,7 @@
   --font-size-bm-cr: 0.8rem;
   --font-size-bm-socialbutton: 1.2rem;
   --font-size-realisation: 1rem;
+  --font-family: "Work Sans", sans-serif;
   --font-family-bm: "Work Sans", sans-serif;
   --font-family-realisation: "Work Sans", sans-serif;
   --font-family-logo: "Montserrat", sans-serif;
@@ -63,6 +67,9 @@
   --color-out-cercle-border: rgb(235, 235, 235);
   --color-out-cercle-bg: #212529;
   --theme-color: #db3d3d;
+  --theme-color-hsl1: 0;
+  --theme-color-hsl2: 69%;
+  --theme-color-hsl3: 55%;
   --theme-color-gradient1: #ef6e8e;
   --theme-color-gradient2: #eea2cc;
   --theme-color-gradient3: #ecd4f1;
@@ -103,6 +110,9 @@
   --color-out-cercle-bg: #212529;
   // --theme-color: #52c8fa;
   --theme-color: #fca311;
+  --theme-color-hsl1: 37;
+  --theme-color-hsl2: 98%;
+  --theme-color-hsl3: 53%;
   --theme-color-gradient1: #ffa285;
   --theme-color-gradient2: #ffbdd5;
   --theme-color-gradient3: #ffe2ff;
@@ -143,6 +153,9 @@
   --color-out-cercle-bg: #212529;
   // --theme-color: #52c8fa;
   --theme-color: #6aac4a;
+  --theme-color-hsl1: 100;
+  --theme-color-hsl2: 40%;
+  --theme-color-hsl3: 48%;
   --theme-color-gradient1: #43c87a;
   --theme-color-gradient2: #7beab6;
   --theme-color-gradient3: #cfffe7;
@@ -183,6 +196,9 @@
   --color-out-cercle-bg: #212529;
   // --theme-color: #52c8fa;
   --theme-color: #52c8fa;
+  --theme-color-hsl1: 198;
+  --theme-color-hsl2: 94%;
+  --theme-color-hsl3: 65%;
   --theme-color-gradient1: #99d2ff;
   --theme-color-gradient2: #c8deff;
   --theme-color-gradient3: #e9edff;
@@ -223,6 +239,9 @@
   --color-out-cercle-bg: #212529;
   // --theme-color: #52c8fa;
   --theme-color: #2a6f97;
+  --theme-color-hsl1: 202;
+  --theme-color-hsl2: 56%;
+  --theme-color-hsl3: 38%;
   --theme-color-gradient1: #708fb2;
   --theme-color-gradient2: #a6b1cb;
   --theme-color-gradient3: #d5d7e4;

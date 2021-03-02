@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { BigmenuComponent } from './bigmenu/bigmenu.component';
+import { GenerategraduationComponent } from './generategraduation/generategraduation.component';
 
 const routes: Routes = [
   { path: 'menuprincipale', component: BigmenuComponent },
