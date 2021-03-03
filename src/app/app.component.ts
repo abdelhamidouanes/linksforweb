@@ -33,6 +33,7 @@ export class AppComponent implements OnInit, OnDestroy{
       afficheMsg => this.afficheMsg = afficheMsg
     );
     this.msgInformationService.emitMsgInformations();
+
   }
 
   ngOnDestroy(): void {
@@ -67,5 +68,9 @@ export class AppComponent implements OnInit, OnDestroy{
     else{
       return false;
     }
+  }
+
+  onCacherMsg(): void {
+    this.msgInformationService.cacherMsg();
   }
 }

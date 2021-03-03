@@ -6,10 +6,12 @@ export class MsgInformationService{
 
     private afficheMsg: string;
     private msgInformation: string;
+    timeToHideMsg: number;
 
     constructor() {
         this.afficheMsg = 'false';
         this.msgInformation = '';
+        this.timeToHideMsg = 6000;
     }
 
     afficheMsgSubject = new Subject<string>();
@@ -23,6 +25,14 @@ export class MsgInformationService{
     afficherMsg(msg: string ): void{
         this.afficheMsg = 'true';
         this.msgInformation = msg;
+        this.emitMsgInformations();
+        setTimeout(() => {
+            this.cacherMsg();
+        }, this.timeToHideMsg);
+    }
+
+    cacherMsg(): void{
+        this.afficheMsg = 'false';
         this.emitMsgInformations();
     }
 }

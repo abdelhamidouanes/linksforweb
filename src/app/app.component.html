@@ -16,7 +16,8 @@
   </div>
   <app-boule-color class="boule-color-container" [colorTimer]="timerChangingColor"></app-boule-color>
   <app-msg-information  [msg]="msgInformation"
-  [ngClass]="{'msg-information-container': true,
-              'affichermsg': getAfficheMsg(),
-              'cachermsg': !getAfficheMsg()}"></app-msg-information>
+                        [ngClass]="{'msg-information-container': true,
+                                    'affichermsg': getAfficheMsg(),
+                                    'cachermsg': !getAfficheMsg()}"
+              (click)="onCacherMsg()"></app-msg-information>
 </div>
