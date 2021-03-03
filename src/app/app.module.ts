@@ -1,3 +1,4 @@
+import { MsgInformationService } from './Services/msginformation.service';
 import { RealisationService } from './Services/realisation.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -73,7 +74,7 @@ import { GenerategraduationComponent } from './generategraduation/generategradua
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [RealisationService],
+  providers: [RealisationService, MsgInformationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

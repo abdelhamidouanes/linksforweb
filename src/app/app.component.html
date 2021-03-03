@@ -15,5 +15,8 @@
     <router-outlet></router-outlet>
   </div>
   <app-boule-color class="boule-color-container" [colorTimer]="timerChangingColor"></app-boule-color>
-  <app-msg-information class="msg-information-container"></app-msg-information>
-</div> 
+  <app-msg-information  [msg]="msgInformation"
+  [ngClass]="{'msg-information-container': true,
+              'affichermsg': getAfficheMsg(),
+              'cachermsg': !getAfficheMsg()}"></app-msg-information>
+</div>

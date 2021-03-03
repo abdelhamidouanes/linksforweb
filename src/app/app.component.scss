@@ -89,6 +89,7 @@
   --font-size-bm-cr: 0.8rem;
   --font-size-bm-socialbutton: 1.2rem;
   --font-size-realisation: 1rem;
+  --font-family: "Work Sans", sans-serif;
   --font-family-bm: "Work Sans", sans-serif;
   --font-family-realisation: "Work Sans", sans-serif;
   --font-family-logo: "Montserrat", sans-serif;
@@ -130,6 +131,7 @@
   --font-size-bm-cr: 0.8rem;
   --font-size-bm-socialbutton: 1.2rem;
   --font-size-realisation: 1rem;
+  --font-family: "Work Sans", sans-serif;
   --font-family-bm: "Work Sans", sans-serif;
   --font-family-realisation: "Work Sans", sans-serif;
   --font-family-logo: "Montserrat", sans-serif;
@@ -173,6 +175,7 @@
   --font-size-bm-cr: 0.8rem;
   --font-size-bm-socialbutton: 1.2rem;
   --font-size-realisation: 1rem;
+  --font-family: "Work Sans", sans-serif;
   --font-family-bm: "Work Sans", sans-serif;
   --font-family-realisation: "Work Sans", sans-serif;
   --font-family-logo: "Montserrat", sans-serif;
@@ -216,6 +219,7 @@
   --font-size-bm-cr: 0.8rem;
   --font-size-bm-socialbutton: 1.2rem;
   --font-size-realisation: 1rem;
+  --font-family: "Work Sans", sans-serif;
   --font-family-bm: "Work Sans", sans-serif;
   --font-family-realisation: "Work Sans", sans-serif;
   --font-family-logo: "Montserrat", sans-serif;
@@ -259,6 +263,7 @@
   --font-size-bm-cr: 0.8rem;
   --font-size-bm-socialbutton: 1.2rem;
   --font-size-realisation: 1rem;
+  --font-family: "Work Sans", sans-serif;
   --font-family-bm: "Work Sans", sans-serif;
   --font-family-realisation: "Work Sans", sans-serif;
   --font-family-logo: "Montserrat", sans-serif;
@@ -300,13 +305,24 @@
   min-height: 100%;
 }
 .boule-color-container {
+  z-index: 500;
   position: absolute;
   top: var(--position-y-boulecolor);
   right: var(--position-x-boulecolor);
 }
 .msg-information-container {
+  --aux1: calc(var(--width-sm1) + var(--width-sm2));
+  --aux2: calc(100% - var(--aux1));
+  width: var(--aux2);
   position: absolute;
+  left: var(--aux1);
   top: var(--position-y-msg-information);
-  right: var(--position-x-msg-information);
-  transform: translate(var(--position-x-msg-information));
+  transition: all var(--time-transition) ease-in-out;
+}
+.affichermsg {
+  opacity: 1;
+}
+.cachermsg {
+  transform: translateY(-100%);
+  opacity: 0;
 }

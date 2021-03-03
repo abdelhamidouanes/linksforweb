@@ -1,7 +1,7 @@
 import { Realisation } from './../Models/Realisation.model';
 import { imgFolderRealisation } from './../Models/Constantes.model';
 import { RealisationService } from './../Services/realisation.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './realisations.component.html',
   styleUrls: ['./realisations.component.scss']
 })
-export class RealisationsComponent implements OnInit {
+export class RealisationsComponent implements OnInit, OnDestroy {
 
   realisations: Realisation[];
   realisationsLength: number;
@@ -23,9 +23,15 @@ export class RealisationsComponent implements OnInit {
       realisations => this.realisations = realisations
     );
     this.realisationService.emitRealisations();
+
     this.imgFolderRealisation = imgFolderRealisation;
     this.realisationsLength = this.realisations.length;
   }
+
+  ngOnDestroy(): void {
+    this.realisationsSubscription.unsubscribe();
+  }
+
   onMouseOver(realisation: Realisation): void {
     realisation.hover = true;
   }

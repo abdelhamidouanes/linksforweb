@@ -1,3 +1,4 @@
+import { MsgInformationService } from './../Services/msginformation.service';
 import { imgFolder } from './../Models/Constantes.model';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -10,7 +11,7 @@ export class BouleColorComponent implements OnInit {
   @Input() colorTimer: number;
   imgFolder: string;
   fermerBouleColor: boolean;
-  constructor() { }
+  constructor(private msgInformationService: MsgInformationService) { }
 
   ngOnInit(): void {
     this.imgFolder = imgFolder;
@@ -23,6 +24,7 @@ export class BouleColorComponent implements OnInit {
 
   onClickX(): void{
     this.fermerBouleColor = true;
+    this.msgInformationService.afficherMsg('Shake the mouse to open the color panel again.');
   }
 
 }
