@@ -1,6 +1,8 @@
+import { BouleColorService } from './../Services/boulecolor.service';
 import { MsgInformationService } from './../Services/msginformation.service';
 import { imgFolder } from './../Models/Constantes.model';
 import { Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-boule-color',
@@ -10,12 +12,17 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BouleColorComponent implements OnInit {
   @Input() colorTimer: number;
   imgFolder: string;
-  fermerBouleColor: boolean;
-  constructor(private msgInformationService: MsgInformationService) { }
+  bouleColorFermer: string;
+  bouleColorFermerSubscription: Subscription;
+  constructor(private msgInformationService: MsgInformationService, private bouleColorService: BouleColorService) { }
 
   ngOnInit(): void {
     this.imgFolder = imgFolder;
-    this.fermerBouleColor = false;
+
+    this.bouleColorFermerSubscription = this.bouleColorService.bouleColorFermerSubject.subscribe(
+      bouleColorFermer => this.bouleColorFermer = bouleColorFermer
+    );
+    this.bouleColorService.emitBouleColorFermer();
   }
 
   getColorTimerString(): string{
@@ -23,8 +30,16 @@ export class BouleColorComponent implements OnInit {
   }
 
   onClickX(): void{
-    this.fermerBouleColor = true;
+    this.bouleColorService.fermerBouleColor();
     this.msgInformationService.afficherMsg('Shake the mouse to open the color panel again.');
   }
 
+  getBouleColorFermer(): boolean {
+    if (this.bouleColorFermer === 'true') {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 }

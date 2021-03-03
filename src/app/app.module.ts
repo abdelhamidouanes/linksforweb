@@ -1,3 +1,4 @@
+import { BouleColorService } from './Services/boulecolor.service';
 import { MsgInformationService } from './Services/msginformation.service';
 import { RealisationService } from './Services/realisation.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -35,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BouleColorComponent } from './boule-color/boule-color.component';
 import { MsgInformationComponent } from './msg-information/msg-information.component';
 import { GenerategraduationComponent } from './generategraduation/generategraduation.component';
+import { GrillePageComponent } from './grille-page/grille-page.component';
 
 @NgModule({
   declarations: [
@@ -67,14 +69,15 @@ import { GenerategraduationComponent } from './generategraduation/generategradua
     CopyrightBmComponent,
     BouleColorComponent,
     MsgInformationComponent,
-    GenerategraduationComponent
+    GenerategraduationComponent,
+    GrillePageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [RealisationService, MsgInformationService],
+  providers: [RealisationService, MsgInformationService, BouleColorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
