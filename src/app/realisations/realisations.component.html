@@ -4,6 +4,8 @@
         (mouseout)="onMouseOut(realisation)" 
         [ngStyle]="{'background-image': 'url(' + imgFolderRealisation+realisation.photoPrincipale + ')', 'filter': realisation.hover ? 'brightness(0.38)': 'brightness(1)', 'border-right-width': realisationsLength==(i+1) ? '0px': '1px'}"
         >
+        <app-grille-page class="grille-page" 
+        [ngStyle]="{'display': realisationsLength==(i+1) && getBouleColorFermer() ? 'flex': 'none'}"></app-grille-page>
         </div>
         <div class="cercle" (mouseover)="onMouseOver(realisation)" (mouseout)="onMouseOut(realisation)"></div>
         <div class="plush" (mouseover)="onMouseOver(realisation)" (mouseout)="onMouseOut(realisation)"></div>

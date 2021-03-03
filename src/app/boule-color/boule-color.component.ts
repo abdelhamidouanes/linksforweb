@@ -1,7 +1,7 @@
 import { BouleColorService } from './../Services/boulecolor.service';
 import { MsgInformationService } from './../Services/msginformation.service';
 import { imgFolder } from './../Models/Constantes.model';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './boule-color.component.html',
   styleUrls: ['./boule-color.component.scss']
 })
-export class BouleColorComponent implements OnInit {
+export class BouleColorComponent implements OnInit, OnDestroy {
   @Input() colorTimer: number;
   imgFolder: string;
   bouleColorFermer: string;
@@ -23,6 +23,10 @@ export class BouleColorComponent implements OnInit {
       bouleColorFermer => this.bouleColorFermer = bouleColorFermer
     );
     this.bouleColorService.emitBouleColorFermer();
+  }
+
+  ngOnDestroy(): void {
+    this.bouleColorFermerSubscription.unsubscribe();
   }
 
   getColorTimerString(): string{

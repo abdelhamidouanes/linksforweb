@@ -1,3 +1,4 @@
+import { BouleColorService } from './../Services/boulecolor.service';
 import { Realisation } from './../Models/Realisation.model';
 import { imgFolderRealisation } from './../Models/Constantes.model';
 import { RealisationService } from './../Services/realisation.service';
@@ -16,7 +17,11 @@ export class RealisationsComponent implements OnInit, OnDestroy {
   realisationsSubscription: Subscription;
   imgFolderRealisation: string;
   realisationFilter: string;
-  constructor(private realisationService: RealisationService) { }
+
+  bouleColorFermer: string;
+  bouleColorFermerSubscription: Subscription;
+
+  constructor(private realisationService: RealisationService, private bouleColorService: BouleColorService) { }
 
   ngOnInit(): void {
     this.realisationsSubscription = this.realisationService.realisationSubject.subscribe(
@@ -26,10 +31,16 @@ export class RealisationsComponent implements OnInit, OnDestroy {
 
     this.imgFolderRealisation = imgFolderRealisation;
     this.realisationsLength = this.realisations.length;
+
+    this.bouleColorFermerSubscription = this.bouleColorService.bouleColorFermerSubject.subscribe(
+      bouleColorFermer => this.bouleColorFermer = bouleColorFermer
+    );
+    this.bouleColorService.emitBouleColorFermer();
   }
 
   ngOnDestroy(): void {
     this.realisationsSubscription.unsubscribe();
+    this.bouleColorFermerSubscription.unsubscribe();
   }
 
   onMouseOver(realisation: Realisation): void {
@@ -37,5 +48,14 @@ export class RealisationsComponent implements OnInit, OnDestroy {
   }
   onMouseOut(realisation: Realisation): void {
     realisation.hover = false;
+  }
+
+  getBouleColorFermer(): boolean {
+    if (this.bouleColorFermer === 'true') {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 }
