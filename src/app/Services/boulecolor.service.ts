@@ -1,5 +1,7 @@
+import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
+@Injectable()
 export class BouleColorService{
 
     private bouleColorFermer: string;

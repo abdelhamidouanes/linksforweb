@@ -1,3 +1,4 @@
+import { GrillService } from './../Services/grill.service';
 import { BouleColorService } from './../Services/boulecolor.service';
 import { MsgInformationService } from './../Services/msginformation.service';
 import { imgFolder } from './../Models/Constantes.model';
@@ -14,7 +15,12 @@ export class BouleColorComponent implements OnInit, OnDestroy {
   imgFolder: string;
   bouleColorFermer: string;
   bouleColorFermerSubscription: Subscription;
-  constructor(private msgInformationService: MsgInformationService, private bouleColorService: BouleColorService) { }
+
+  affichePanel: string;
+  affichePanelSubscription: Subscription;
+  constructor(private msgInformationService: MsgInformationService,
+              private bouleColorService: BouleColorService,
+              private grillService: GrillService) { }
 
   ngOnInit(): void {
     this.imgFolder = imgFolder;
@@ -23,10 +29,17 @@ export class BouleColorComponent implements OnInit, OnDestroy {
       bouleColorFermer => this.bouleColorFermer = bouleColorFermer
     );
     this.bouleColorService.emitBouleColorFermer();
+
+
+    this.affichePanelSubscription = this.grillService.affichePanelSubject.subscribe(
+      affichePanel => this.affichePanel = affichePanel
+    );
+    this.grillService.emitAffichePanel();
   }
 
   ngOnDestroy(): void {
     this.bouleColorFermerSubscription.unsubscribe();
+    this.affichePanelSubscription.unsubscribe();
   }
 
   getColorTimerString(): string{
@@ -40,6 +53,15 @@ export class BouleColorComponent implements OnInit, OnDestroy {
 
   getBouleColorFermer(): boolean {
     if (this.bouleColorFermer === 'true') {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+    getAffichePanel(): boolean {
+    if (this.affichePanel === 'true') {
       return true;
     }
     else {

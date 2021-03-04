@@ -1,4 +1,4 @@
-<div class="container" [ngStyle]="{'display': getBouleColorFermer()===true ? 'none' : 'flex'}">
+<div class="container" [ngStyle]="{'display': getBouleColorFermer() && getAffichePanel()===true ? 'none' : 'flex'}">
     <div class="boule">
         <p>{{getColorTimerString()}}</p>
         <div class="x-container" (click)="onClickX()">

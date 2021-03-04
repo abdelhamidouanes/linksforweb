@@ -37,6 +37,7 @@ import { BouleColorComponent } from './boule-color/boule-color.component';
 import { MsgInformationComponent } from './msg-information/msg-information.component';
 import { GenerategraduationComponent } from './generategraduation/generategraduation.component';
 import { GrillePageComponent } from './grille-page/grille-page.component';
+import { GrillService } from './Services/grill.service';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,7 @@ import { GrillePageComponent } from './grille-page/grille-page.component';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [RealisationService, MsgInformationService, BouleColorService],
+  providers: [RealisationService, MsgInformationService, BouleColorService, GrillService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
