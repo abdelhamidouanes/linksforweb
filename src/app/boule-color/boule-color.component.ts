@@ -16,8 +16,6 @@ export class BouleColorComponent implements OnInit, OnDestroy {
   bouleColorFermer: string;
   bouleColorFermerSubscription: Subscription;
 
-  affichePanel: string;
-  affichePanelSubscription: Subscription;
   constructor(private msgInformationService: MsgInformationService,
               private bouleColorService: BouleColorService,
               private grillService: GrillService) { }
@@ -30,16 +28,10 @@ export class BouleColorComponent implements OnInit, OnDestroy {
     );
     this.bouleColorService.emitBouleColorFermer();
 
-
-    this.affichePanelSubscription = this.grillService.affichePanelSubject.subscribe(
-      affichePanel => this.affichePanel = affichePanel
-    );
-    this.grillService.emitAffichePanel();
   }
 
   ngOnDestroy(): void {
     this.bouleColorFermerSubscription.unsubscribe();
-    this.affichePanelSubscription.unsubscribe();
   }
 
   getColorTimerString(): string{
@@ -60,12 +52,4 @@ export class BouleColorComponent implements OnInit, OnDestroy {
     }
   }
 
-    getAffichePanel(): boolean {
-    if (this.affichePanel === 'true') {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
 }

@@ -27,8 +27,12 @@ export class GrillePageComponent implements OnInit, OnDestroy {
 
   onHover(): void{
     this.grillService.numberOfHoverAdd();
-    if (!this.getOnMouvementLoading) {
+    if (!this.getOnMouvementLoading()) {
+      console.log('getOnMouvementLoading : false');
       this.grillService.onMouvement();
+    }
+    else {
+      console.log('getOnMouvementLoading : true');
     }
   }
 
