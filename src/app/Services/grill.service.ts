@@ -10,9 +10,7 @@ export class GrillService{
 
     private numberOfHover: number;
     private timeToGetPanel: number;
-    private timeToBeginLoading: number;
     private minNumberOfHoverToGetPanel: number;
-    private minNumberOfHoberToBeginLoading: number;
 
     bouleColorFermer: string;
     bouleColorFermerSubscription: Subscription;
@@ -21,9 +19,7 @@ export class GrillService{
         this.onMouvementLoading = 'false';
         this.numberOfHover = 0;
         this.timeToGetPanel = 1000;
-        this.timeToBeginLoading = 1000;
-        this.minNumberOfHoverToGetPanel = 40;
-        this.minNumberOfHoberToBeginLoading = 15;
+        this.minNumberOfHoverToGetPanel = 25;
 
         this.bouleColorFermerSubscription = this.bouleColorService.bouleColorFermerSubject.subscribe(
         bouleColorFermer => this.bouleColorFermer = bouleColorFermer
@@ -41,31 +37,24 @@ export class GrillService{
     }
 
     numberOfHoverAdd(): void{
+        console.log('number of hover' + this.numberOfHover);
         this.numberOfHover++;
     }
 
     onMouvement(): void{
         if (this.onMouvementLoading === 'false' && this.getBouleColorFermer()) {
+            this.onMouvementLoadingChange('true');
             setTimeout(() => {
-                if (this.numberOfHover > this.minNumberOfHoberToBeginLoading) {
-                    this.onMouvementLoadingChange('true');
-                    setTimeout(() => {
-                        if (this.numberOfHover > this.minNumberOfHoverToGetPanel) {
-                            this.bouleColorService.ouvrirBouleColor();
+                if (this.numberOfHover > this.minNumberOfHoverToGetPanel) {
                             this.bouleColorService.ouvrirBouleColor();
                             this.onMouvementLoadingChange('false');
                             this.numberOfHover = 0;
-                        }
-                        else {
-                            this.onMouvementLoadingChange('false');
-                            this.numberOfHover = 0;
-                        }
-                    }, this.timeToGetPanel);
                 }
                 else {
-                    this.numberOfHover = 0;
+                            this.onMouvementLoadingChange('false');
+                            this.numberOfHover = 0;
                 }
-            }, this.timeToBeginLoading);
+            }, this.timeToGetPanel);
         }
     }
 
