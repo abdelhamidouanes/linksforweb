@@ -40,7 +40,7 @@ export class BouleColorComponent implements OnInit, OnDestroy {
 
   onClickX(): void{
     this.bouleColorService.fermerBouleColor();
-    this.msgInformationService.afficherMsg('Shake the mouse to open the color panel again.');
+    this.msgInformationService.afficherMsg('Secouez la souris en haut à droite de l\'écran pour ouvrir à nouveau le panneau de couleurs.');
   }
 
   getBouleColorFermer(): boolean {

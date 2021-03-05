@@ -20,9 +20,9 @@ export class GrillService{
     constructor(private bouleColorService: BouleColorService) {
         this.onMouvementLoading = 'false';
         this.numberOfHover = 0;
-        this.timeToGetPanel = 2000;
+        this.timeToGetPanel = 1000;
         this.timeToBeginLoading = 1000;
-        this.minNumberOfHoverToGetPanel = 30;
+        this.minNumberOfHoverToGetPanel = 40;
         this.minNumberOfHoberToBeginLoading = 15;
 
         this.bouleColorFermerSubscription = this.bouleColorService.bouleColorFermerSubject.subscribe(
@@ -42,11 +42,10 @@ export class GrillService{
 
     numberOfHoverAdd(): void{
         this.numberOfHover++;
-        console.log('number of hover : ' + this.numberOfHover);
     }
 
     onMouvement(): void{
-        if (this.onMouvementLoading === 'false' && !this.getBouleColorFermer()) {
+        if (this.onMouvementLoading === 'false' && this.getBouleColorFermer()) {
             setTimeout(() => {
                 if (this.numberOfHover > this.minNumberOfHoberToBeginLoading) {
                     this.onMouvementLoadingChange('true');

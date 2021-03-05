@@ -15,8 +15,6 @@
   justify-content: center;
   align-items: center;
   opacity: 0.5;
-  width: 30px;
-  height: 30px;
   border-radius: 50%;
   background-color: var(--theme-color);
   box-shadow: 2px 3px 19px 1px var(--color-out-cercle-bg);
@@ -24,6 +22,14 @@
   -moz-box-shadow: 2px 3px 19px 1px var(--color-out-cercle-bg);
   transition: all var(--time-transition-socialmedia) ease-in-out;
   animation: boulevibration 2s ease 3 forwards 3s;
+}
+.boule-apparition {
+  width: 30px;
+  height: 30px;
+}
+.boule-fermeture {
+  width: 0px;
+  height: 0px;
 }
 .boule:hover {
   opacity: 1;
@@ -91,7 +97,13 @@
   opacity: 0.3;
 }
 .x {
+  transition: all var(--time-transition-socialmedia) ease-in-out;
+}
+.x-apparition {
   width: 15px;
+}
+.x-fermeture {
+  width: 0px;
 }
 .x-container:hover {
   opacity: 1;

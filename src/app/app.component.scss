@@ -319,6 +319,7 @@
   top: var(--position-y-msg-information);
   transition: all var(--time-transition) ease-in-out;
   cursor: pointer;
+  z-index: 5000;
 }
 .affichermsg {
   opacity: 1;

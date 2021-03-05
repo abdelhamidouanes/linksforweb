@@ -2,6 +2,7 @@
   position: relative;
   width: 100%;
   height: 100px;
+  cursor: pointer;
 }
 .background-container {
   width: 100%;
@@ -15,6 +16,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
+  cursor: pointer;
 }
 .info-graduation {
   border-radius: 80%;
@@ -23,6 +25,7 @@
   height: 2px;
   opacity: 1;
   transition: all var(--time-transition) ease-in-out;
+  cursor: pointer;
 }
 p {
   z-index: 500;
@@ -36,6 +39,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
+  cursor: pointer;
   transition: all var(--time-transition) ease-in-out;
 }
 .info-graduation:nth-child(1) {

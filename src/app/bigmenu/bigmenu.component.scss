@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 2fr 5fr 0.5fr;
@@ -32,4 +33,14 @@
 .copyright-bm {
   grid-row: 3/4;
   grid-column: 1/3;
+}
+.grille-page {
+  position: absolute;
+  grid-column: 1/3;
+  grid-row: 1/4;
+  top: 0px;
+  right: 0px;
+  z-index: 1000;
+  width: 50%;
+  height: 50%;
 }

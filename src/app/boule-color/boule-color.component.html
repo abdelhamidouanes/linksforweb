@@ -1,8 +1,12 @@
-<div class="container" [ngStyle]="{'display': getBouleColorFermer()===true ? 'none' : 'flex'}">
-    <div class="boule">
-        <p>{{getColorTimerString()}}</p>
+<div class="container">
+    <div [ngClass]="{'boule' : true,
+                 'boule-apparition' : getBouleColorFermer() === false,
+                 'boule-fermeture' : getBouleColorFermer() === true }">
+        <p [ngStyle]="{'display': getBouleColorFermer() === true ? 'none' : 'flex'}">{{getColorTimerString()}}</p>
         <div class="x-container" (click)="onClickX()">
-            <img class="x" [src]="imgFolder + 'xbutton.png'" alt="croix de fermeture">
+            <img [ngClass]="{'x' : true,
+                 'x-apparition' : getBouleColorFermer() === false,
+                 'x-fermeture' : getBouleColorFermer() === true }" [src]="imgFolder + 'xbutton.png'" alt="croix de fermeture">
         </div>
     </div>
 </div>
